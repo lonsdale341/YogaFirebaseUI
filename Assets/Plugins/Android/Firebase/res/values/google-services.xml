@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="firebase_database_url" translatable="false">https://yogaolga.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">118238300341</string>
+  <string name="google_storage_bucket" translatable="false">yogaolga.appspot.com</string>
+  <string name="project_id" translatable="false">yogaolga</string>
+  <string name="google_api_key" translatable="false">AIzaSyDYjM5aGkC8OwX2v5QFFp-ZZjxS6N3h5-8</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDYjM5aGkC8OwX2v5QFFp-ZZjxS6N3h5-8</string>
+  <string name="google_app_id" translatable="false">1:118238300341:android:b73c6805ba4c8555</string>
+  <string name="default_web_client_id" translatable="false">118238300341-41n408f3k1j67moamh4kmqrhssa9f07g.apps.googleusercontent.com</string>
+</resources>

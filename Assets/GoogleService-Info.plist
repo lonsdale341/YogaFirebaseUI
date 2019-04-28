@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>118238300341-fi0bli8l31ms86lprusmt48r02c37ugd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.118238300341-fi0bli8l31ms86lprusmt48r02c37ugd</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>118238300341-7n7e01mlpfnae9aqfadklos8qjvo7lsa.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC_K52BfbH3o7J7-LHdf-W_pX82sdEKeck</string>
+	<key>GCM_SENDER_ID</key>
+	<string>118238300341</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.olga.yoga</string>
+	<key>PROJECT_ID</key>
+	<string>yogaolga</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yogaolga.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:118238300341:ios:47c941c616b0fbb7</string>
+	<key>DATABASE_URL</key>
+	<string>https://yogaolga.firebaseio.com</string>
+</dict>
+</plist>

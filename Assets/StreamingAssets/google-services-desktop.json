@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "118238300341-fi0bli8l31ms86lprusmt48r02c37ugd.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_K52BfbH3o7J7-LHdf-W_pX82sdEKeck"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:118238300341:ios:47c941c616b0fbb7", 
+        "android_client_info": {
+          "package_name": "com.olga.yoga"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "yogaolga.appspot.com", 
+    "project_id": "yogaolga", 
+    "firebase_url": "https://yogaolga.firebaseio.com", 
+    "project_number": "118238300341"
+  }
+}
