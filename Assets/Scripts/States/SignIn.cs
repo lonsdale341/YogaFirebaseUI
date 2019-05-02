@@ -90,14 +90,14 @@ namespace States
                 }
                 else
                 {
-                    manager.PushState(new WaitForTask(auth.CreateUserWithEmailAndPasswordAsync(
-                   dialogComponent.SignUpEmail.text, dialogComponent.SignUpPwd.text)));
+                    manager.PushState(new WaitForTask(auth.SignInWithEmailAndPasswordAsync(
+                        dialogComponent.SignUpEmail.text, dialogComponent.SignUpPwd.text)));
                 }
             }
-            // else if (source == dialogComponent.ContinueButton.gameObject)
+            // else if (source == dialogComponent.Login.gameObject)
             // {
             //     manager.PushState(new WaitForTask(auth.SignInWithEmailAndPasswordAsync(
-            //         dialogComponent.Email.text, dialogComponent.Password.text)));
+            //         dialogComponent.SignUpEmail.text, dialogComponent.SignUpEmail.text)));
             // }
             // else if (source == dialogComponent.ForgotPasswordButton.gameObject)
             // {
