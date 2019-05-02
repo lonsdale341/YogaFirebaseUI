@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
  class StringConstants {
-     // Title screen text:
-     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +
+
+    public const string PrefabsRegistrationFormtMenu = "RegistrationFormMenu";
+    public const string PrefabsSignInMenu = "SignInMenu";
+    public const string PrefabLoadedeLabel = "LoadedeLabel";
+    public const string PrefabErrorPanel = "ErrorPanel";
+
+    // Title screen text:
+    public const string CouldNotFetchUserData = "Could not connect to user database.\n" +
        "Some features will be disabled.";
      // Default names:
      public const string DefaultUserId = "XYZ";
@@ -32,10 +38,10 @@ using UnityEngine;
      public const string PrefabsARMenu = "AR_Meenu";
      public const string PrefabsWarningChoosePetMenu = "WarningChoosePet";
      public const string PrefabsSingleLabelMenu = "SingleLabelMenu";
-     public const string PrefabBasicDialog = "BasicDialog";
+     
      public const string PrefabsChooseSigninMenu = "ChooseSignInMenu";
-     public const string PrefabsNewAccountMenu = "NewAccountMenu";
-     public const string PrefabsSignInMenu = "SignInMenu";
+     
+     
      public const string PrefabsPasswordResetMenu = "PasswordResetMenu";
      public const string PrefabsManageAccountMenu = "ManageAccountMenu";
      // Key used to save names for uploading scores:

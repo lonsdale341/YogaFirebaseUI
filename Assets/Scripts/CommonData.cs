@@ -20,6 +20,6 @@ public class CommonData
     // Trailing slashes required, because in some cases
     // we append further paths onto these.
    
-    public const string DBUserTablePath = "DB_Users/";
+   // public const string DBUserTablePath = "DB_Users/";
 
 }

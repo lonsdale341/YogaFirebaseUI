@@ -68,25 +68,25 @@ public class MainManager : MonoBehaviour {
       
         Firebase.AppOptions ops = new Firebase.AppOptions();
         CommonData.app = Firebase.FirebaseApp.Create(ops);
-        CommonData.app.SetEditorDatabaseUrl("https://augemented-reality.firebaseio.com/");
+        CommonData.app.SetEditorDatabaseUrl("https://yogaolga.firebaseio.com/");
 
-        Screen.orientation = ScreenOrientation.Landscape;
+        Screen.orientation = ScreenOrientation.Portrait;
     
 
 
 
-#if UNITY_EDITOR
-      UserData temp = new UserData();
-      temp.nameUser = StringConstants.DefaultUserName;
-      temp.id = StringConstants.DefaultUserId;
-      temp.nameMyPet = "";
-     
-      CommonData.currentUser = new DBStruct<UserData>(
-        CommonData.DBUserTablePath + StringConstants.DefaultUserId, CommonData.app);
-      CommonData.currentUser.Initialize(temp);
-      //stateManager.SwapState(new States.SelectModeState());
-#else
+//#if UNITY_EDITOR
+//      UserData temp = new UserData();
+//      temp.nameUser = StringConstants.DefaultUserName;
+//      temp.id = StringConstants.DefaultUserId;
+//      
+//     
+//      CommonData.currentUser = new DBStruct<UserData>(
+//        CommonData.DBUserTablePath + StringConstants.DefaultUserId, CommonData.app);
+//      CommonData.currentUser.Initialize(temp);
+//      //stateManager.SwapState(new States.SelectModeState());
+//#else
         stateManager.PushState(new States.Startup());
-#endif
+//#endif
     }
 }
