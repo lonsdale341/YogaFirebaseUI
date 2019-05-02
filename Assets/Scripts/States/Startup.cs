@@ -22,7 +22,7 @@ namespace States
             // On mobile, we go through the full auth system, to request a user id.
             // If we need to sign in, do that.  Otherwise, if we know who we are,
             // so fetch the user data.
-            if (true||auth.CurrentUser == null)
+            if (auth.CurrentUser == null)
             {
                 manager.PushState(new RegistrationForm());
             }
