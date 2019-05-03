@@ -10304,6 +10304,9 @@ MonoBehaviour:
   - name: ErrorPanel
     prefab: {fileID: 8911376801310759491, guid: e87dc27f442bc784c89df2e645fad4ee,
       type: 3}
+  - name: PanelSigned
+    prefab: {fileID: 7929473395030189825, guid: 979b89a0baee4b141b02292a90406f7e,
+      type: 3}
 --- !u!4 &1042730186
 Transform:
   m_ObjectHideFlags: 0
@@ -11448,7 +11451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1126807838
 RectTransform:
   m_ObjectHideFlags: 0
