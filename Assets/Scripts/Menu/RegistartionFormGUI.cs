@@ -7,7 +7,9 @@ namespace Menus
     public class RegistartionFormGUI : BaseMenu
     {
 
-        
+        public GUIButton GoogleUP;
+        public GUIButton FacebookUP;
+        public GUIButton TwitterUP;
         public GUIButton SignIN_Go;
         public GUIButton Registration;
         public InputField SignUpEmail;

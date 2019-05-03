@@ -8,6 +8,7 @@ using UnityEngine;
     public const string PrefabsSignInMenu = "SignInMenu";
     public const string PrefabLoadedeLabel = "LoadedeLabel";
     public const string PrefabErrorPanel = "ErrorPanel";
+    public const string PrefabPanelSigned = "PanelSigned";
 
     // Title screen text:
     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +

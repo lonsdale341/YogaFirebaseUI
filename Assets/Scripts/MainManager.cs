@@ -2,13 +2,26 @@
 using System.Collections.Generic;
 using Firebase.Unity.Editor;
 using UnityEngine;
-
+using Google;
+using Facebook.Unity;
 
 public class MainManager : MonoBehaviour {
     [HideInInspector]
     public States.StateManager stateManager = new States.StateManager();
-	// Use this for initialization
-	void Start ()
+    //Google auth variables
+    private string webClientId = "118238300341-41n408f3k1j67moamh4kmqrhssa9f07g.apps.googleusercontent.com";
+    private void Awake()
+    {
+        // Setup for Google Sign In
+ 
+         CommonData.configuration = new GoogleSignInConfiguration
+         {
+             WebClientId = webClientId,
+             RequestIdToken = true
+         };
+    }
+    // Use this for initialization
+    void Start ()
 	{
 	    InitializeAndStart();
 	}
@@ -32,6 +45,16 @@ public class MainManager : MonoBehaviour {
     // add them if possible.
     void InitializeFirebaseAndStart()
     {
+        if (!FB.IsInitialized)
+        {
+            // Initialize the Facebook SDK
+            FB.Init();
+        }
+        else
+        {
+            // Already initialized, signal an app activation App Event
+            FB.ActivateApp();
+        }
         Firebase.DependencyStatus dependencyStatus = Firebase.FirebaseApp.CheckDependencies();
 
         if (dependencyStatus != Firebase.DependencyStatus.Available)
@@ -58,6 +81,7 @@ public class MainManager : MonoBehaviour {
             StartGame();
         }
     }
+    
     void StartGame()
     {
          

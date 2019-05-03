@@ -10,7 +10,7 @@ namespace States
         Firebase.Auth.FirebaseAuth auth;
         Menus.SignInGUI dialogComponent;
         bool canceled = false;
-
+        string imageURL;
         public override void Initialize()
         {
             auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
@@ -39,13 +39,114 @@ namespace States
                         manager.PopState();
                     }
                 }
+                if (results.sourceState == typeof(WaitForTaskGoogleIn))
+                {
+                    Debug.Log("Resume 2 CreateAccount");
+                    WaitForTaskGoogleIn.ResultsGoogleIn taskResults = results.data as WaitForTaskGoogleIn.ResultsGoogleIn;
+                    if (taskResults.task.IsFaulted)
+                    {
+
+                        manager.PushState(new ErrorMassage("Error Message", taskResults.message));
+                        // manager.PushState(new BasicDialog("Could not create account."));
+                    }
+                    else if (taskResults.task.IsCanceled)
+                    {
+                        manager.PushState(new ErrorMassage("Error Message", taskResults.message));
+                    }
+                    else
+                    {
+                        Firebase.Auth.Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential(taskResults.task.Result.IdToken, null);
+                        auth.SignInWithCredentialAsync(credential).ContinueWith(t =>
+                        {
+                            if (t.IsCanceled)
+                            {
+                                manager.PushState(new ErrorMassage("Error Message", "SignInWithCredentialAsync was canceled."));
+
+                                return;
+                            }
+                            if (t.IsFaulted)
+                            {
+                                manager.PushState(new ErrorMassage("Error Message", "SignInWithCredentialAsync encountered an error: " + t.Exception));
+
+                                return;
+                            }
+                            imageURL = taskResults.iamgeURL;
+                            manager.PopState();
+
+                        });
+
+                    }
+                }
+                if (results.sourceState == typeof(WaitForTaskFacebookIn))
+                {
+                    Debug.Log("Resume 2 CreateAccount");
+                    WaitForTaskFacebookIn.ResultsFacebookIn taskResults = results.data as WaitForTaskFacebookIn.ResultsFacebookIn;
+                    if (string.IsNullOrEmpty(taskResults.accessToken))
+                    {
+                        manager.PushState(new ErrorMassage("Error Message", "User cancelled login"));
+
+                    }
+                    else
+                    {
+                        Firebase.Auth.Credential credential = Firebase.Auth.FacebookAuthProvider.GetCredential(taskResults.accessToken);
+                        auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
+                        {
+                            if (task.IsCanceled)
+                            {
+                                manager.PushState(new ErrorMassage("Error Message", "SignInWithCredentialAsync was canceled."));
+
+                                return;
+                            }
+                            if (task.IsFaulted)
+                            {
+                                manager.PushState(new ErrorMassage("Error Message", "SignInWithCredentialAsync encountered an error: " + task.Exception));
+
+                                return;
+                            }
+                            imageURL = taskResults.iamgeURL;
+                            manager.PopState();
+                        });
+                    }
+
+                }
+                if (results.sourceState == typeof(WaitForTaskTwitterIn))
+                {
+                    Debug.Log("Resume 2 CreateAccount");
+                    WaitForTaskTwitterIn.ResultsTwitterIn taskResults = results.data as WaitForTaskTwitterIn.ResultsTwitterIn;
+                    if (taskResults.session == null)
+                    {
+                        manager.PushState(new ErrorMassage("Error Message", taskResults.message));
+
+                    }
+                    else
+                    {
+                        Firebase.Auth.Credential credential = Firebase.Auth.TwitterAuthProvider.GetCredential(taskResults.session.authToken.token, taskResults.session.authToken.secret);
+                        auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
+                        {
+                            if (task.IsCanceled)
+                            {
+                                manager.PushState(new ErrorMassage("Error Message", "Please install Twitter application"));
+                                return;
+                            }
+                            if (task.IsFaulted)
+                            {
+                                manager.PushState(new ErrorMassage("Error Message", "Please install Twitter application"));
+                                return;
+                            }
+                            imageURL = taskResults.iamgeURL;
+                            manager.PopState();
+
+                        });
+                    }
+
+                }
             }
         }
 
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return new StateExitValue(typeof(SignIn), null);
+            return new StateExitValue(typeof(SignIn), new SignInResult(canceled,this.imageURL));
         }
         public static bool validateEmail(string email)
         {
@@ -94,6 +195,24 @@ namespace States
                         dialogComponent.SignUpEmail.text, dialogComponent.SignUpPwd.text)));
                 }
             }
+            else if (source == dialogComponent.GoogleUP.gameObject)
+            {
+
+                manager.PushState(new WaitForTaskGoogleIn());
+
+            }
+            else if (source == dialogComponent.FacebookUP.gameObject)
+            {
+
+                manager.PushState(new WaitForTaskFacebookIn());
+
+            }
+            else if (source == dialogComponent.TwitterUP.gameObject)
+            {
+
+                manager.PushState(new WaitForTaskTwitterIn());
+
+            }
             // else if (source == dialogComponent.Login.gameObject)
             // {
             //     manager.PushState(new WaitForTask(auth.SignInWithEmailAndPasswordAsync(
@@ -108,8 +227,10 @@ namespace States
     public class SignInResult
     {
         public bool Canceled = false;
-        public SignInResult(bool canceled)
+        public string imageURL;
+        public SignInResult(bool canceled, string url)
         {
+            this.imageURL = url;
             this.Canceled = canceled;
         }
 

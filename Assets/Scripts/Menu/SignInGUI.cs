@@ -8,7 +8,9 @@ namespace Menus
     public class SignInGUI : BaseMenu
     {
 
-        
+        public GUIButton GoogleUP;
+        public GUIButton FacebookUP;
+        public GUIButton TwitterUP;
         public GUIButton Register_Go;
         public GUIButton Login;
         public InputField SignUpEmail;

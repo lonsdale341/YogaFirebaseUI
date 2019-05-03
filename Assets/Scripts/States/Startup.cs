@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Facebook.Unity;
 namespace States
 {
 
@@ -28,7 +28,8 @@ namespace States
             }
             else
             {
-                manager.PushState(new States.FetchUserData(auth.CurrentUser.UserId));
+                manager.PushState(new PanelSigned(auth.CurrentUser.DisplayName, auth.CurrentUser.PhotoUrl.AbsoluteUrlOrEmptyString()));
+                //manager.PushState(new States.FetchUserData(auth.CurrentUser.UserId));
             }
         }
        public override void Resume(StateExitValue results)
@@ -43,8 +44,10 @@ namespace States
                if (auth.CurrentUser != null)
                {
                     // Yes!  Continue!
-                    manager.PushState(new ErrorMassage("Message", "SignIn."));
+                    //manager.PushState(new ErrorMassage("Message", "SignIn."));
                     // manager.PushState(new FetchUserData(auth.CurrentUser.UserId));
+                    RegistrationForm.RegistrationFormResult taskResults = results.data as RegistrationForm.RegistrationFormResult;
+                    manager.PushState(new PanelSigned(auth.CurrentUser.DisplayName, taskResults.imageURL));
                 }
                else
                {
