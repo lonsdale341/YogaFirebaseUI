@@ -22,27 +22,27 @@ namespace States
 
         public override void Resume(StateExitValue results)
         {
-            Debug.Log("Resume CreateAccount");
+            Debug.Log("Resume RegistrationForm");
             ShowUI();
             if (results != null)
             {
-                Debug.Log("Resume 1 CreateAccount");
+                
                 if (results.sourceState == typeof(WaitForTask))
                 {
-                    Debug.Log("Resume 2 CreateAccount");
+                    Debug.Log("Resume RegistrationForm ");
                     WaitForTask.Results taskResults = results.data as WaitForTask.Results;
                     if (taskResults.task.IsFaulted)
                     {
-                        Debug.Log("Resume 3 CreateAccount");
+                        
                         manager.PushState(new ErrorMassage("Error Message", "Could not create account."));
                         // manager.PushState(new BasicDialog("Could not create account."));
                     }
                     else
                     {
-                        Debug.Log("Resume 4 CreateAccount");
+                        
                         if (!string.IsNullOrEmpty(dialogComponent.SignUpUsername.text))
                         {
-                            Debug.Log("Resume 5 CreateAccount");
+                            Debug.Log("Resume RegistrationForm UpdateUserProfile");
                             Firebase.Auth.UserProfile profile =
                               new Firebase.Auth.UserProfile();
                             profile.DisplayName = dialogComponent.SignUpUsername.text;
@@ -180,6 +180,7 @@ namespace States
             {
                 // manager.PopState();
                 manager.SwapState(new SignIn());
+               // manager.SwapState(new PanelSigned("USER",""));
             }
             else if (source == dialogComponent.Registration.gameObject)
             {

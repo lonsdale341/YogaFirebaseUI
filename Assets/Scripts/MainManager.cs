@@ -5,7 +5,8 @@ using UnityEngine;
 using Google;
 using Facebook.Unity;
 
-public class MainManager : MonoBehaviour {
+public class MainManager : MonoBehaviour
+{
     [HideInInspector]
     public States.StateManager stateManager = new States.StateManager();
     //Google auth variables
@@ -13,23 +14,24 @@ public class MainManager : MonoBehaviour {
     private void Awake()
     {
         // Setup for Google Sign In
- 
-         CommonData.configuration = new GoogleSignInConfiguration
-         {
-             WebClientId = webClientId,
-             RequestIdToken = true
-         };
+
+        CommonData.configuration = new GoogleSignInConfiguration
+        {
+            WebClientId = webClientId,
+            RequestIdToken = true
+        };
     }
     // Use this for initialization
-    void Start ()
-	{
-	    InitializeAndStart();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+        InitializeAndStart();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         stateManager.Update();
-	}
+    }
     void FixedUpdate()
     {
         stateManager.FixedUpdate();
@@ -37,8 +39,8 @@ public class MainManager : MonoBehaviour {
     void InitializeAndStart()
     {
         InitializeFirebaseAndStart();
-       
-        
+
+
     }
     // When the app starts, check to make sure that we have
     // the required dependencies to use Firebase, and if not,
@@ -65,7 +67,8 @@ public class MainManager : MonoBehaviour {
                 if (dependencyStatus == Firebase.DependencyStatus.Available)
                 {
                     //InitializeFirebaseComponents();
-                   // StartGame();
+
+                    StartGame();
                 }
                 else
                 {
@@ -81,36 +84,36 @@ public class MainManager : MonoBehaviour {
             StartGame();
         }
     }
-    
+
     void StartGame()
     {
-         
-         
+
+
         CommonData.prefabs = FindObjectOfType<PrefabList>();
         CommonData.canvasHolder = GameObject.Find("CanvasHolder");
         CommonData.mainManager = this;
-      
+
         Firebase.AppOptions ops = new Firebase.AppOptions();
         CommonData.app = Firebase.FirebaseApp.Create(ops);
         CommonData.app.SetEditorDatabaseUrl("https://yogaolga.firebaseio.com/");
 
         Screen.orientation = ScreenOrientation.Portrait;
-    
 
 
 
-//#if UNITY_EDITOR
-//      UserData temp = new UserData();
-//      temp.nameUser = StringConstants.DefaultUserName;
-//      temp.id = StringConstants.DefaultUserId;
-//      
-//     
-//      CommonData.currentUser = new DBStruct<UserData>(
-//        CommonData.DBUserTablePath + StringConstants.DefaultUserId, CommonData.app);
-//      CommonData.currentUser.Initialize(temp);
-//      //stateManager.SwapState(new States.SelectModeState());
-//#else
+
+        //#if UNITY_EDITOR
+        //      UserData temp = new UserData();
+        //      temp.nameUser = StringConstants.DefaultUserName;
+        //      temp.id = StringConstants.DefaultUserId;
+        //      
+        //     
+        //      CommonData.currentUser = new DBStruct<UserData>(
+        //        CommonData.DBUserTablePath + StringConstants.DefaultUserId, CommonData.app);
+        //      CommonData.currentUser.Initialize(temp);
+        //      //stateManager.SwapState(new States.SelectModeState());
+        //#else
         stateManager.PushState(new States.Startup());
-//#endif
+        //#endif
     }
 }

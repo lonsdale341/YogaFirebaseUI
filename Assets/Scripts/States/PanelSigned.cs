@@ -46,7 +46,7 @@ namespace States
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return null;
+            return new StateExitValue(typeof(PanelSigned), null);
         }
         IEnumerator LoadImage()
         {

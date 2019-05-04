@@ -16,10 +16,13 @@ namespace States
 
         public void PushState(BaseState newState)
         {
+            Debug.Log("PushState_Start=" + stateStack.Count);
             newState.manager = this;
             CurrentState().Suspend();
             stateStack.Push(newState);
+            Debug.Log("PushState_End=" + stateStack.Count);
             newState.Initialize();
+            
         }
         // Ends the currently-running state, and resumes whatever is next
         // down the line.
@@ -48,13 +51,15 @@ namespace States
         // Переключает текущее состояние на новое, не нарушая ничего ниже. В отличие от Pop + Push, в следующем
         public void SwapState(BaseState newState)
         {
+            Debug.Log("SwapState_Start=" + stateStack.Count);
             newState.manager = this;
             CurrentState().Cleanup();
-            Debug.Log("Count5=" + stateStack.Count);
+            
             stateStack.Pop();
             stateStack.Push(newState);
-            Debug.Log("Count6=" + stateStack.Count);
+            Debug.Log("SwapState_End=" + stateStack.Count);
             CurrentState().Initialize();
+            
         }
         // Called by the main game every update.
         public void Update()

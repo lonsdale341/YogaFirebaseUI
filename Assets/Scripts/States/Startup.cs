@@ -17,8 +17,17 @@ namespace States
             // When the game starts up, it needs to either download the user data
             // or create a new profile.
             auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-
-
+            if (auth.CurrentUser != null)
+            {
+                
+                Debug.Log("Init StartUp ID=" + auth.CurrentUser.UserId);
+                Debug.Log("Init StartUp DisplayName= " + auth.CurrentUser.DisplayName);
+            }
+            else
+            {
+                Debug.Log("Init StartUp auth.CurrentUser=null");
+            }
+            
             // On mobile, we go through the full auth system, to request a user id.
             // If we need to sign in, do that.  Otherwise, if we know who we are,
             // so fetch the user data.
@@ -43,6 +52,8 @@ namespace States
                // Did it work?
                if (auth.CurrentUser != null)
                {
+                    Debug.Log("resume1 StartUp");
+                    Debug.Log("resume1 StartUp DisplayName= "+auth.CurrentUser.DisplayName);
                     // Yes!  Continue!
                     //manager.PushState(new ErrorMassage("Message", "SignIn."));
                     // manager.PushState(new FetchUserData(auth.CurrentUser.UserId));
