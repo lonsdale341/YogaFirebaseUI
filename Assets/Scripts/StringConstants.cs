@@ -12,6 +12,11 @@ using UnityEngine;
     public const string PrefabsPanelTrainingCatalogBlock = "PanelTrainingCatalogBlock";
     public const string PrefabsPanelTrainingCatalogList = "PanelTrainingCatalogList";
     public const string PrefabsPanelAssanInfo = "PanelAssanInfo";
+    public const string PrefabsPanelProfile = "PanelProfile";
+    public const string PrefabsPanelProfile_Favourites = "PanelProfile_Favourites";
+    public const string PrefabsPanelProfile_Goals = "PanelProfile_Goals";
+    public const string PrefabsPanelProfile_Raiting = "PanelProfile_Raiting";
+    public const string PrefabsPanelProfile_Payment = "PanelProfile_Payment";
 
     // Title screen text:
     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +

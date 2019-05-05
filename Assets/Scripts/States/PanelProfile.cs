@@ -4,22 +4,22 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 namespace States
 {
-    class PanelAssanInfo : BaseState
+    class PanelProfile : BaseState
     {
 
-        string assanaName;
-        Menus.PanelAssanInfoGUI dialogComponent;
-        public PanelAssanInfo(string nameAssana)
+       
+        Menus.PanelProfileGUI dialogComponent;
+        public PanelProfile()
         {
 
-            assanaName = nameAssana;
+           
 
         }
         public override void Initialize()
         {
            
-            dialogComponent = SpawnUI<Menus.PanelAssanInfoGUI>(StringConstants.PrefabsPanelAssanInfo);
-            dialogComponent.Asana_Name.text = assanaName;
+            dialogComponent = SpawnUI<Menus.PanelProfileGUI>(StringConstants.PrefabsPanelProfile);
+            
         }
 
         public override void Suspend()
@@ -36,21 +36,31 @@ namespace States
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return new StateExitValue(typeof(PanelAssanInfo), null);
+            return new StateExitValue(typeof(PanelProfile), null);
         }
         
         public override void HandleUIEvent(GameObject source, object eventData)
         {
-            if (source == dialogComponent.Back.gameObject)
+            if (source == dialogComponent.Favourites.gameObject)
             {
 
-                manager.PopState();
+                //manager.PopState();
             }
 
-           if (source == dialogComponent.Profile.gameObject)
+            if (source == dialogComponent.Goals.gameObject)
             {
 
-                manager.ClearStack(new PanelProfile());
+                //manager.PopState();
+            }
+            if (source == dialogComponent.PaymentInformation.gameObject)
+            {
+
+                //manager.PopState();
+            }
+            if (source == dialogComponent.Training.gameObject)
+            {
+
+                manager.SwapState(new PanelTrainingCatalogList());
             }
             if (source == dialogComponent.Instructor.gameObject)
             {
@@ -67,6 +77,7 @@ namespace States
 
                 //manager.PopState();
             }
+            
 
         }
     }
