@@ -45,19 +45,19 @@ namespace Menus
 
         private void Update()
         {
-            float targetScale = 1.0f;
-            if (press)
-            {
-                targetScale = 1.0f + ButtonScalePressed;
-            }
-            else if (hover)
-            {
-                targetScale = 1.0f + ButtonScaleRange + Mathf.Cos(
-                    (hoverStartTime - Time.realtimeSinceStartup) * ButtonScaleFrequency) *
-                    ButtonScaleRange;
-            }
-            currentScale = currentScale * (1.0f - transitionSpeed) + targetScale * transitionSpeed;
-            transform.localScale = startingScale * currentScale;
+           // float targetScale = 1.0f;
+           // if (press)
+           // {
+           //     targetScale = 1.0f + ButtonScalePressed;
+           // }
+           // else if (hover)
+           // {
+           //     targetScale = 1.0f + ButtonScaleRange + Mathf.Cos(
+           //         (hoverStartTime - Time.realtimeSinceStartup) * ButtonScaleFrequency) *
+           //         ButtonScaleRange;
+           // }
+           // currentScale = currentScale * (1.0f - transitionSpeed) + targetScale * transitionSpeed;
+           // transform.localScale = startingScale * currentScale;
         }
 
         public void OnPointerClick(PointerEventData eventData)

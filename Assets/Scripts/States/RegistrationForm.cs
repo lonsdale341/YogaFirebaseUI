@@ -213,27 +213,31 @@ namespace States
                 }
                 else
                 {
-                    manager.PushState(new WaitForTask(auth.CreateUserWithEmailAndPasswordAsync(
-                   dialogComponent.SignUpEmail.text, dialogComponent.SignUpPwd.text)));
+                    //  manager.PushState(new WaitForTask(auth.CreateUserWithEmailAndPasswordAsync(
+                    // dialogComponent.SignUpEmail.text, dialogComponent.SignUpPwd.text)));
+                    manager.SwapState(new PanelTrainingCatalogList());
                 }
 
             }
             else if (source == dialogComponent.GoogleUP.gameObject)
             {
 
-                manager.PushState(new WaitForTaskGoogleIn());
+                // manager.PushState(new WaitForTaskGoogleIn());
+                manager.SwapState(new PanelTrainingCatalogList());
 
             }
             else if (source == dialogComponent.FacebookUP.gameObject)
             {
 
-                manager.PushState(new WaitForTaskFacebookIn());
+                // manager.PushState(new WaitForTaskFacebookIn());
+                manager.SwapState(new PanelTrainingCatalogList());
 
             }
             else if (source == dialogComponent.TwitterUP.gameObject)
             {
 
-                manager.PushState(new WaitForTaskTwitterIn());
+                //manager.PushState(new WaitForTaskTwitterIn());
+                manager.SwapState(new PanelTrainingCatalogList());
 
             }
         }

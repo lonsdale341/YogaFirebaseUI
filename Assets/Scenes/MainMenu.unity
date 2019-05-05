@@ -10307,6 +10307,11 @@ MonoBehaviour:
   - name: PanelSigned
     prefab: {fileID: 7929473395030189825, guid: 979b89a0baee4b141b02292a90406f7e,
       type: 3}
+  - name: PanelTrainingCatalogBlock
+    prefab: {fileID: 761782382494610027, guid: e2efc4a5170aa714d95e9abc6b43ae59, type: 3}
+  - name: PanelTrainingCatalogList
+    prefab: {fileID: 4290190344343610587, guid: 80a8312c09a0f0e4184ed42445efa263,
+      type: 3}
 --- !u!4 &1042730186
 Transform:
   m_ObjectHideFlags: 0

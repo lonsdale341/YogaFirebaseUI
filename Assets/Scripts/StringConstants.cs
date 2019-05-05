@@ -9,6 +9,9 @@ using UnityEngine;
     public const string PrefabLoadedeLabel = "LoadedeLabel";
     public const string PrefabErrorPanel = "ErrorPanel";
     public const string PrefabPanelSigned = "PanelSigned";
+    public const string PrefabsPanelTrainingCatalogBlock = "PanelTrainingCatalogBlock";
+    public const string PrefabsPanelTrainingCatalogList = "PanelTrainingCatalogList";
+    public const string PrefabsPanelAssanInfo = "PanelAssanInfo";
 
     // Title screen text:
     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +
