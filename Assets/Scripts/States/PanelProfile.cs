@@ -80,7 +80,7 @@ namespace States
             else if (source == dialogComponent.Social.gameObject)
             {
 
-                //manager.PopState();
+                manager.ClearStack(new PanelSocialMain());
             }
 
 

@@ -50,7 +50,7 @@ namespace States
             if (source == dialogComponent.Training.gameObject)
             {
 
-                manager.SwapState(new PanelTrainingCatalogList());
+                manager.ClearStack(new PanelTrainingCatalogList());
             }
             if (source == dialogComponent.Instructor.gameObject)
             {
@@ -65,7 +65,7 @@ namespace States
             if (source == dialogComponent.Social.gameObject)
             {
 
-                //manager.PopState();
+                manager.ClearStack(new PanelSocialMain());
             }
 
         }
