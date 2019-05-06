@@ -4,12 +4,12 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 namespace States
 {
-    class PanelSocialCreatedPos : BaseState
+    class PanelCustomize : BaseState
     {
 
 
-        Menus.PanelSocialCreatedPostGUI dialogComponent;
-        public PanelSocialCreatedPos()
+        Menus.PanelCustomizeGUI dialogComponent;
+        public PanelCustomize()
         {
 
 
@@ -18,7 +18,7 @@ namespace States
         public override void Initialize()
         {
 
-            dialogComponent = SpawnUI<Menus.PanelSocialCreatedPostGUI>(StringConstants.PrefabsPanelSocialCreatedPos);
+            dialogComponent = SpawnUI<Menus.PanelCustomizeGUI>(StringConstants.PrefabsPanelCustomize);
 
         }
 
@@ -36,20 +36,18 @@ namespace States
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return new StateExitValue(typeof(PanelSocialCreatedPos), null);
+            return new StateExitValue(typeof(PanelCustomize), null);
         }
 
         public override void HandleUIEvent(GameObject source, object eventData)
         {
-            if (source == dialogComponent.Back.gameObject)
+            if (source == dialogComponent.ChatMaster.gameObject)
             {
 
-                manager.PushState(new PanelSocialFav());
+                manager.PushState(new PanelProfile_Favourites());
             }
 
-            
-            
-            
+           
             else if (source == dialogComponent.Training.gameObject)
             {
 
@@ -60,15 +58,15 @@ namespace States
 
                 //manager.PopState();
             }
-            else if (source == dialogComponent.Costomize.gameObject)
-            {
-
-                manager.ClearStack(new PanelCustomize());
-            }
             else if (source == dialogComponent.Profile.gameObject)
             {
 
                 manager.ClearStack(new PanelProfile());
+            }
+            else if (source == dialogComponent.Social.gameObject)
+            {
+
+                manager.ClearStack(new PanelSocialMain());
             }
 
 

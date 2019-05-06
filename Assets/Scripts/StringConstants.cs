@@ -21,6 +21,7 @@ using UnityEngine;
     public const string PrefabsPanelSocialFeed = "PanelSocialFeed";
     public const string PrefabsPanelSocialFav = "PanelSocialFav";
     public const string PrefabsPanelSocialCreatedPos = "PanelSocialCreatedPos";
+    public const string PrefabsPanelCustomize = "PanelCustomize";
 
     // Title screen text:
     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +
