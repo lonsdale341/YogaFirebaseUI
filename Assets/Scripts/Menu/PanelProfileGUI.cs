@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 namespace Menus
 {
-    public class PanelAssanInfoGUI : BaseMenu
+    public class PanelProfileGUI : BaseMenu
     {
-        public Text Asana_Name;
-        public GUIButton Back;
-        public GUIButton ShowMode;
 
-        public GUIButton Profile;
+        public GUIButton Favourites;
+        public GUIButton Goals;
+        public GUIButton PaymentInformation;
+        public GUIButton Training;
         public GUIButton Instructor;
         public GUIButton Costomize;
         public GUIButton Social;

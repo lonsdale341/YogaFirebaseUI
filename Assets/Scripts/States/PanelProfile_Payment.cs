@@ -4,22 +4,22 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 namespace States
 {
-    class PanelAssanInfo : BaseState
+    class PanelProfile_Payment : BaseState
     {
 
-        string assanaName;
-        Menus.PanelAssanInfoGUI dialogComponent;
-        public PanelAssanInfo(string nameAssana)
+       
+        Menus.PanelProfile_PaymentGUI dialogComponent;
+        public PanelProfile_Payment()
         {
 
-            assanaName = nameAssana;
+           
 
         }
         public override void Initialize()
         {
            
-            dialogComponent = SpawnUI<Menus.PanelAssanInfoGUI>(StringConstants.PrefabsPanelAssanInfo);
-            dialogComponent.Asana_Name.text = assanaName;
+            dialogComponent = SpawnUI<Menus.PanelProfile_PaymentGUI>(StringConstants.PrefabsPanelProfile_Payment);
+            
         }
 
         public override void Suspend()
@@ -36,7 +36,7 @@ namespace States
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return new StateExitValue(typeof(PanelAssanInfo), null);
+            return new StateExitValue(typeof(PanelProfile_Payment), null);
         }
         
         public override void HandleUIEvent(GameObject source, object eventData)
@@ -47,10 +47,10 @@ namespace States
                 manager.PopState();
             }
 
-           if (source == dialogComponent.Profile.gameObject)
+            if (source == dialogComponent.Training.gameObject)
             {
 
-                manager.ClearStack(new PanelProfile());
+                manager.SwapState(new PanelTrainingCatalogList());
             }
             if (source == dialogComponent.Instructor.gameObject)
             {

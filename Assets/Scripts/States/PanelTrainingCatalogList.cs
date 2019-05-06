@@ -62,6 +62,27 @@ namespace States
                 manager.PushState(new PanelAssanInfo("Asana 5"));
             }
 
+            if (source == dialogComponent.Profile.gameObject)
+            {
+
+                manager.SwapState(new PanelProfile());
+            }
+            if (source == dialogComponent.Instructor.gameObject)
+            {
+
+                //manager.PopState();
+            }
+            if (source == dialogComponent.Costomize.gameObject)
+            {
+
+                //manager.PopState();
+            }
+            if (source == dialogComponent.Social.gameObject)
+            {
+
+                //manager.PopState();
+            }
+
         }
     }
    

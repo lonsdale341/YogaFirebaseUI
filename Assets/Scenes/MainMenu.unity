@@ -10312,6 +10312,20 @@ MonoBehaviour:
   - name: PanelTrainingCatalogList
     prefab: {fileID: 4290190344343610587, guid: 80a8312c09a0f0e4184ed42445efa263,
       type: 3}
+  - name: PanelAssanInfo
+    prefab: {fileID: 6401905076167641935, guid: ac978071ec3baf54fb7c073cec6e53fe,
+      type: 3}
+  - name: PanelProfile
+    prefab: {fileID: 2007638565549321618, guid: 0bac20a3177e58841a58c404058c5975,
+      type: 3}
+  - name: PanelProfile_Favourites
+    prefab: {fileID: 0}
+  - name: PanelProfile_Goals
+    prefab: {fileID: 0}
+  - name: PanelProfile_Raiting
+    prefab: {fileID: 0}
+  - name: PanelProfile_Payment
+    prefab: {fileID: 0}
 --- !u!4 &1042730186
 Transform:
   m_ObjectHideFlags: 0

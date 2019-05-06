@@ -14,6 +14,10 @@ namespace Menus
         public GUIButton Asana_3;
         public GUIButton Asana_4;
         public GUIButton Asana_5;
+        public GUIButton Profile;
+        public GUIButton Instructor;
+        public GUIButton Costomize;
+        public GUIButton Social;
 
     }
 

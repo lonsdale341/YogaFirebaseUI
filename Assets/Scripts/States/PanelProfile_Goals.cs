@@ -4,22 +4,22 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 namespace States
 {
-    class PanelAssanInfo : BaseState
+    class PanelProfile_Goals : BaseState
     {
 
-        string assanaName;
-        Menus.PanelAssanInfoGUI dialogComponent;
-        public PanelAssanInfo(string nameAssana)
+       
+        Menus.PanelProfile_GoalsGUI dialogComponent;
+        public PanelProfile_Goals()
         {
 
-            assanaName = nameAssana;
+           
 
         }
         public override void Initialize()
         {
            
-            dialogComponent = SpawnUI<Menus.PanelAssanInfoGUI>(StringConstants.PrefabsPanelAssanInfo);
-            dialogComponent.Asana_Name.text = assanaName;
+            dialogComponent = SpawnUI<Menus.PanelProfile_GoalsGUI>(StringConstants.PrefabsPanelProfile_Goals);
+            
         }
 
         public override void Suspend()
@@ -36,7 +36,7 @@ namespace States
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return new StateExitValue(typeof(PanelAssanInfo), null);
+            return new StateExitValue(typeof(PanelProfile_Goals), null);
         }
         
         public override void HandleUIEvent(GameObject source, object eventData)
@@ -46,23 +46,27 @@ namespace States
 
                 manager.PopState();
             }
-
-           if (source == dialogComponent.Profile.gameObject)
+            else if(source == dialogComponent.Raiting.gameObject)
             {
 
-                manager.ClearStack(new PanelProfile());
+                manager.PushState(new PanelProfile_Raiting());
             }
-            if (source == dialogComponent.Instructor.gameObject)
+            else if(source == dialogComponent.Training.gameObject)
+            {
+
+                manager.ClearStack(new PanelTrainingCatalogList());
+            }
+            else if(source == dialogComponent.Instructor.gameObject)
             {
 
                 //manager.PopState();
             }
-            if (source == dialogComponent.Costomize.gameObject)
+            else if(source == dialogComponent.Costomize.gameObject)
             {
 
                 //manager.PopState();
             }
-            if (source == dialogComponent.Social.gameObject)
+            else if(source == dialogComponent.Social.gameObject)
             {
 
                 //manager.PopState();
