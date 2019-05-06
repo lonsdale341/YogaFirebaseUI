@@ -10319,13 +10319,31 @@ MonoBehaviour:
     prefab: {fileID: 2007638565549321618, guid: 0bac20a3177e58841a58c404058c5975,
       type: 3}
   - name: PanelProfile_Favourites
-    prefab: {fileID: 0}
+    prefab: {fileID: 1256082047467416575, guid: 166f031fad6f8b54aa48c9da25bbbf5e,
+      type: 3}
   - name: PanelProfile_Goals
-    prefab: {fileID: 0}
+    prefab: {fileID: 6053760466912364165, guid: 73fdb9eb16ddaec438b522d4fd4d5a5e,
+      type: 3}
   - name: PanelProfile_Raiting
-    prefab: {fileID: 0}
+    prefab: {fileID: 1199588009045218955, guid: 27221af551a06f74c90bf167534985d8,
+      type: 3}
   - name: PanelProfile_Payment
-    prefab: {fileID: 0}
+    prefab: {fileID: 2221011549428180628, guid: fcc159b6b3800204ab66097b46d64b99,
+      type: 3}
+  - name: PanelSocialMain
+    prefab: {fileID: 2200284146156266167, guid: 8ea7b97a27ec64042b12cc468c69e3f3,
+      type: 3}
+  - name: PanelSocialFeed
+    prefab: {fileID: 733339735614192629, guid: 77c3826a52df04b6184e4cc70030908f, type: 3}
+  - name: PanelSocialFav
+    prefab: {fileID: 6105195076306245832, guid: 201258c085ce5427fb6cb84b9c805b1b,
+      type: 3}
+  - name: PanelSocialCreatedPos
+    prefab: {fileID: 1763733773122791386, guid: 8c700005c75a448b7acb332d87a36903,
+      type: 3}
+  - name: PanelCustomize
+    prefab: {fileID: 5096496830604263647, guid: 991132590348f493e8838d2c066dd999,
+      type: 3}
 --- !u!4 &1042730186
 Transform:
   m_ObjectHideFlags: 0

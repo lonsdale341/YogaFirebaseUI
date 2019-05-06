@@ -75,7 +75,7 @@ namespace States
             if (source == dialogComponent.Costomize.gameObject)
             {
 
-                //manager.PopState();
+                manager.ClearStack(new PanelCustomize());
             }
             if (source == dialogComponent.Social.gameObject)
             {

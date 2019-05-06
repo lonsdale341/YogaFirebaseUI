@@ -44,7 +44,7 @@ namespace States
             if (source == dialogComponent.Back.gameObject)
             {
 
-                manager.PushState(new PanelProfile_Favourites());
+                manager.PushState(new PanelSocialMain());
             }
 
 
@@ -61,7 +61,7 @@ namespace States
             else if (source == dialogComponent.Costomize.gameObject)
             {
 
-                //manager.PopState();
+                manager.ClearStack(new PanelCustomize());
             }
             else if (source == dialogComponent.Profile.gameObject)
             {
