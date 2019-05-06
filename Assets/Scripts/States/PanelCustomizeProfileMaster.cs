@@ -4,12 +4,12 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 namespace States
 {
-    class PanelCustomize : BaseState
+    class PanelCustomizeProfileMaster : BaseState
     {
 
 
-        Menus.PanelCustomizeGUI dialogComponent;
-        public PanelCustomize()
+        Menus.PanelCustomizeChooseMasterProfileGUI dialogComponent;
+        public PanelCustomizeProfileMaster()
         {
 
 
@@ -17,8 +17,8 @@ namespace States
         }
         public override void Initialize()
         {
-
-            dialogComponent = SpawnUI<Menus.PanelCustomizeGUI>(StringConstants.PrefabsPanelCustomize);
+            Debug.Log("PanelCustomizeProfileMaster");
+            dialogComponent = SpawnUI<Menus.PanelCustomizeChooseMasterProfileGUI>(StringConstants.PrefabsPanelProfileMaster);
 
         }
 
@@ -36,18 +36,23 @@ namespace States
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return new StateExitValue(typeof(PanelCustomize), null);
+            return new StateExitValue(typeof(PanelCustomizeProfileMaster), null);
         }
 
         public override void HandleUIEvent(GameObject source, object eventData)
         {
-            if (source == dialogComponent.ChatMaster.gameObject)
+            if (source == dialogComponent.Back.gameObject)
             {
 
-                manager.PushState(new PanelCustomizeChooseMaster());
+                manager.PopState();
             }
 
-           
+            else if (source == dialogComponent.StartChat.gameObject)
+            {
+
+                manager.PushState(new PanelCustomizeChatList());
+            }
+            
             else if (source == dialogComponent.Training.gameObject)
             {
 

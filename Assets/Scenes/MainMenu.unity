@@ -10344,6 +10344,17 @@ MonoBehaviour:
   - name: PanelCustomize
     prefab: {fileID: 5096496830604263647, guid: 991132590348f493e8838d2c066dd999,
       type: 3}
+  - name: PanelChoseMaster
+    prefab: {fileID: 3079383269877220705, guid: 321b829b10a3aec4f9cf10aa50d06881,
+      type: 3}
+  - name: PanelProfileMaster
+    prefab: {fileID: 8847315580075701826, guid: 0d0e7f07e2b54824a8d9118a531115e7,
+      type: 3}
+  - name: PanelChatting
+    prefab: {fileID: 8640142279482200031, guid: a319d9de949c36841b910c0beb985f80,
+      type: 3}
+  - name: qqqqq
+    prefab: {fileID: 0}
 --- !u!4 &1042730186
 Transform:
   m_ObjectHideFlags: 0
