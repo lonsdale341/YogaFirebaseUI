@@ -1,0 +1,21 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Menus
+{
+    public class PanelSociaFavGUI : BaseMenu
+    {
+
+        public GUIButton Back;
+      
+        public GUIButton Training;
+        public GUIButton Instructor;
+        public GUIButton Costomize;
+        public GUIButton Profile;
+
+    }
+
+
+}
