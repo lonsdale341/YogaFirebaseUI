@@ -7,19 +7,19 @@ namespace States
     class PanelProfile : BaseState
     {
 
-       
+
         Menus.PanelProfileGUI dialogComponent;
         public PanelProfile()
         {
 
-           
+
 
         }
         public override void Initialize()
         {
-           
+
             dialogComponent = SpawnUI<Menus.PanelProfileGUI>(StringConstants.PrefabsPanelProfile);
-            
+
         }
 
         public override void Suspend()
@@ -30,7 +30,7 @@ namespace States
         public override void Resume(StateExitValue results)
         {
             ShowUI();
-            
+
         }
 
         public override StateExitValue Cleanup()
@@ -38,50 +38,54 @@ namespace States
             DestroyUI();
             return new StateExitValue(typeof(PanelProfile), null);
         }
-        
+
         public override void HandleUIEvent(GameObject source, object eventData)
         {
             if (source == dialogComponent.Favourites.gameObject)
             {
 
-                //manager.PopState();
+                manager.PushState(new PanelProfile_Favourites());
             }
 
-            if (source == dialogComponent.Goals.gameObject)
+            else if (source == dialogComponent.Goals.gameObject)
+            {
+
+                manager.PushState(new PanelProfile_Goals());
+            }
+            else if (source == dialogComponent.PaymentInformation.gameObject)
+            {
+
+                manager.PushState(new PanelProfile_Payment());
+            }
+            else if (source == dialogComponent.PaymentInformation.gameObject)
             {
 
                 //manager.PopState();
             }
-            if (source == dialogComponent.PaymentInformation.gameObject)
+            else if (source == dialogComponent.Training.gameObject)
+            {
+
+                manager.ClearStack(new PanelTrainingCatalogList());
+            }
+            else if (source == dialogComponent.Instructor.gameObject)
             {
 
                 //manager.PopState();
             }
-            if (source == dialogComponent.Training.gameObject)
-            {
-
-                manager.SwapState(new PanelTrainingCatalogList());
-            }
-            if (source == dialogComponent.Instructor.gameObject)
+            else if (source == dialogComponent.Costomize.gameObject)
             {
 
                 //manager.PopState();
             }
-            if (source == dialogComponent.Costomize.gameObject)
+            else if (source == dialogComponent.Social.gameObject)
             {
 
                 //manager.PopState();
             }
-            if (source == dialogComponent.Social.gameObject)
-            {
 
-                //manager.PopState();
-            }
-            
 
         }
     }
-   
+
 
 }
- 

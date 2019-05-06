@@ -47,11 +47,27 @@ namespace States
                 manager.PopState();
             }
 
-           //else if (source == dialogComponent.Asana_1.gameObject)
-           //{
-           //    
-           //}
-            
+            else if (source == dialogComponent.Training.gameObject)
+            {
+
+                manager.ClearStack(new PanelTrainingCatalogList());
+            }
+            else if (source == dialogComponent.Instructor.gameObject)
+            {
+
+                //manager.PopState();
+            }
+            else if (source == dialogComponent.Costomize.gameObject)
+            {
+
+                //manager.PopState();
+            }
+            else if (source == dialogComponent.Social.gameObject)
+            {
+
+                //manager.PopState();
+            }
+
         }
     }
    

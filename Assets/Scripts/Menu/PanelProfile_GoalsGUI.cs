@@ -9,7 +9,11 @@ namespace Menus
     {
 
         public GUIButton Back;
-        
+        public GUIButton Raiting;
+        public GUIButton Training;
+        public GUIButton Instructor;
+        public GUIButton Costomize;
+        public GUIButton Social;
 
     }
 

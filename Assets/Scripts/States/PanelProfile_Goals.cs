@@ -18,7 +18,7 @@ namespace States
         public override void Initialize()
         {
            
-            dialogComponent = SpawnUI<Menus.PanelProfile_GoalsGUI>(StringConstants.PrefabsPanelProfile);
+            dialogComponent = SpawnUI<Menus.PanelProfile_GoalsGUI>(StringConstants.PrefabsPanelProfile_Goals);
             
         }
 
@@ -46,12 +46,32 @@ namespace States
 
                 manager.PopState();
             }
+            else if(source == dialogComponent.Raiting.gameObject)
+            {
 
-           //else if (source == dialogComponent.Asana_1.gameObject)
-           //{
-           //    
-           //}
-            
+                manager.PushState(new PanelProfile_Raiting());
+            }
+            else if(source == dialogComponent.Training.gameObject)
+            {
+
+                manager.ClearStack(new PanelTrainingCatalogList());
+            }
+            else if(source == dialogComponent.Instructor.gameObject)
+            {
+
+                //manager.PopState();
+            }
+            else if(source == dialogComponent.Costomize.gameObject)
+            {
+
+                //manager.PopState();
+            }
+            else if(source == dialogComponent.Social.gameObject)
+            {
+
+                //manager.PopState();
+            }
+
         }
     }
    
