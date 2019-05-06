@@ -17,6 +17,10 @@ using UnityEngine;
     public const string PrefabsPanelProfile_Goals = "PanelProfile_Goals";
     public const string PrefabsPanelProfile_Raiting = "PanelProfile_Raiting";
     public const string PrefabsPanelProfile_Payment = "PanelProfile_Payment";
+    public const string PrefabsPanelSocialMain = "PanelSocialMain";
+    public const string PrefabsPanelSocialFeed = "PanelSocialFeed";
+    public const string PrefabsPanelSocialFav = "PanelSocialFav";
+    public const string PrefabsPanelSocialCreatedPos = "PanelSocialCreatedPos";
 
     // Title screen text:
     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +
