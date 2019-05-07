@@ -10353,8 +10353,9 @@ MonoBehaviour:
   - name: PanelChatting
     prefab: {fileID: 8640142279482200031, guid: a319d9de949c36841b910c0beb985f80,
       type: 3}
-  - name: qqqqq
-    prefab: {fileID: 0}
+  - name: PanelInstructor
+    prefab: {fileID: 8940839227384766602, guid: f051e1428cf694558947f2751246eca4,
+      type: 3}
 --- !u!4 &1042730186
 Transform:
   m_ObjectHideFlags: 0

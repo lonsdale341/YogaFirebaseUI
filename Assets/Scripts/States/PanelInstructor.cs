@@ -4,12 +4,12 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 namespace States
 {
-    class PanelSocialMain : BaseState
+    class PanelInstructor : BaseState
     {
 
 
-        Menus.PanelSocialMainGUI dialogComponent;
-        public PanelSocialMain()
+        Menus.PanelInstructorGUI dialogComponent;
+        public PanelInstructor()
         {
 
 
@@ -18,7 +18,7 @@ namespace States
         public override void Initialize()
         {
 
-            dialogComponent = SpawnUI<Menus.PanelSocialMainGUI>(StringConstants.PrefabsPanelSocialMain);
+            dialogComponent = SpawnUI<Menus.PanelInstructorGUI>(StringConstants.PrefabsPanelInstructor);
 
         }
 
@@ -36,33 +36,18 @@ namespace States
         public override StateExitValue Cleanup()
         {
             DestroyUI();
-            return new StateExitValue(typeof(PanelSocialMain), null);
+            return new StateExitValue(typeof(PanelInstructor), null);
         }
 
         public override void HandleUIEvent(GameObject source, object eventData)
         {
-            if (source == dialogComponent.Favourites.gameObject)
-            {
-
-                manager.PushState(new PanelSocialFav());
-            }
-
-            else if (source == dialogComponent.FeedScreen.gameObject)
-            {
-
-                manager.PushState(new PanelSocialFeed());
-            }
             
-            
-            else if (source == dialogComponent.Training.gameObject)
+
+           
+            if (source == dialogComponent.Training.gameObject)
             {
 
                 manager.ClearStack(new PanelTrainingCatalogList());
-            }
-            else if (source == dialogComponent.Instructor.gameObject)
-            {
-
-                manager.ClearStack(new PanelInstructor());
             }
             else if (source == dialogComponent.Costomize.gameObject)
             {
@@ -73,6 +58,11 @@ namespace States
             {
 
                 manager.ClearStack(new PanelProfile());
+            }
+            else if (source == dialogComponent.Social.gameObject)
+            {
+
+                manager.ClearStack(new PanelSocialMain());
             }
 
 

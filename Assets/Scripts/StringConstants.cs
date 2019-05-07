@@ -25,6 +25,7 @@ using UnityEngine;
     public const string PrefabsPanelChoseMaster = "PanelChoseMaster";
     public const string PrefabsPanelProfileMaster = "PanelProfileMaster";
     public const string PrefabsPanelChatting= "PanelChatting";
+    public const string PrefabsPanelInstructor = "PanelInstructor";
 
     // Title screen text:
     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +

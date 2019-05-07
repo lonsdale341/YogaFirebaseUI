@@ -57,11 +57,7 @@ namespace States
 
                 manager.PushState(new PanelProfile_Payment());
             }
-            else if (source == dialogComponent.PaymentInformation.gameObject)
-            {
-
-                //manager.PopState();
-            }
+            
             else if (source == dialogComponent.Training.gameObject)
             {
 
@@ -70,7 +66,7 @@ namespace States
             else if (source == dialogComponent.Instructor.gameObject)
             {
 
-                //manager.PopState();
+                manager.ClearStack(new PanelInstructor());
             }
             else if (source == dialogComponent.Costomize.gameObject)
             {

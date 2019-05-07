@@ -59,7 +59,7 @@ namespace States
             else if(source == dialogComponent.Instructor.gameObject)
             {
 
-                //manager.PopState();
+                manager.ClearStack(new PanelInstructor());
             }
             else if(source == dialogComponent.Costomize.gameObject)
             {
