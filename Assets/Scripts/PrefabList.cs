@@ -13,7 +13,11 @@ public class PrefabList : MonoBehaviour {
     
     [HideInInspector]
     public Dictionary<string, GameObject> menuLookup;
-
+    [HideInInspector]
+    public Dictionary<string, GameObject> menuGameObject;
+    public MaterialEntry[] objectMaterials;
+    public AnimatorEntry[] objectAnimators;
+    public GameObjectEntry[] objectGame;
     void Awake()
     {
         menuLookup = new Dictionary<string, GameObject>();
@@ -22,6 +26,11 @@ public class PrefabList : MonoBehaviour {
             menuLookup[entry.name] = entry.prefab;
         }
         Debug.Log("menuLookUp Count=" + menuLookup.Count);
+        menuGameObject = new Dictionary<string, GameObject>();
+        foreach (GameObjectEntry entry in objectGame)
+        {
+            menuGameObject[entry.name] = entry.prefab;
+        }
     }
 	// Use this for initialization
 	void Start () {
@@ -45,3 +54,50 @@ public struct MenuEntry
     public string name;
     public GameObject prefab;
 }
+[System.Serializable]
+public struct GameObjectEntry
+{
+    public GameObjectEntry(string name, GameObject prefab)
+    {
+        this.name = name;
+        this.prefab = prefab;
+    }
+    public string name;
+    public GameObject prefab;
+}
+[System.Serializable]
+public struct MaterialEntry
+{
+    public MaterialEntry(string nameAnimation)
+    {
+        this.nameAnimation = nameAnimation;
+        Materials = new List<Material>();
+    }
+    public string nameAnimation;
+    public List<Material> Materials;
+}
+[System.Serializable]
+public struct LabellEntry
+{
+    public LabellEntry(string nameAnimation, GameObject label)
+    {
+
+        this.Labels = label;
+        this.nameAnimation = nameAnimation;
+    }
+    public string nameAnimation;
+    public GameObject Labels;
+}
+[System.Serializable]
+public struct AnimatorEntry
+{
+    public AnimatorEntry(int number, Animator anim)
+    {
+
+        this.Anim = anim;
+        this.nameAnimation = number;
+    }
+    public int nameAnimation;
+    public Animator Anim;
+}
+

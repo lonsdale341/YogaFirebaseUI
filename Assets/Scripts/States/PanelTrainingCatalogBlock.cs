@@ -43,23 +43,28 @@ namespace States
 
             else if (source == dialogComponent.Asana_1.gameObject)
             {
-                manager.PushState(new PanelAssanInfo("Asana 1"));
+                CommonData.currentAssana = StringConstants.AnimationAsana_1;
+                manager.PushState(new PanelAssanInfo(1));
             }
             else if (source == dialogComponent.Asana_2.gameObject)
             {
-                manager.PushState(new PanelAssanInfo("Asana 2"));
+                CommonData.currentAssana = StringConstants.AnimationAsana_2;
+                manager.PushState(new PanelAssanInfo(2));
             }
             else if (source == dialogComponent.Asana_3.gameObject)
             {
-                manager.PushState(new PanelAssanInfo("Asana 3"));
+                CommonData.currentAssana = StringConstants.AnimationAsana_3;
+                manager.PushState(new PanelAssanInfo(3));
             }
             else if (source == dialogComponent.Asana_4.gameObject)
             {
-                manager.PushState(new PanelAssanInfo("Asana 4"));
+                CommonData.currentAssana = StringConstants.AnimationAsana_4;
+                manager.PushState(new PanelAssanInfo(4));
             }
             else if (source == dialogComponent.Asana_5.gameObject)
             {
-                manager.PushState(new PanelAssanInfo("Asana 5"));
+                CommonData.currentAssana = StringConstants.AnimationAsana_5;
+                manager.PushState(new PanelAssanInfo(5));
             }
 
             if (source == dialogComponent.Profile.gameObject)

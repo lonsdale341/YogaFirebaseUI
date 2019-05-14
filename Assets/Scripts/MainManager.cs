@@ -20,6 +20,10 @@ public class MainManager : MonoBehaviour
             WebClientId = webClientId,
             RequestIdToken = true
         };
+
+        CommonData.prefabs = FindObjectOfType<PrefabList>();
+        CommonData.controllers_Events = FindObjectsOfType<ControllerEvents>();
+        CommonData.StateFade = 0;
     }
     // Use this for initialization
     void Start()

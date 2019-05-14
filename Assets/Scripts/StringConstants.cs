@@ -11,6 +11,8 @@ using UnityEngine;
     public const string PrefabPanelSigned = "PanelSigned";
     public const string PrefabsPanelTrainingCatalogBlock = "PanelTrainingCatalogBlock";
     public const string PrefabsPanelTrainingCatalogList = "PanelTrainingCatalogList";
+    public const string PrefabsPanelTrainingAsanaShow3D = "PanelTrainingAsanaShow3D";
+    public const string PrefabsPanelTrainingAsanaShowAR = "PanelTrainingAsanaShowAR";
     public const string PrefabsPanelAssanInfo = "PanelAssanInfo";
     public const string PrefabsPanelProfile = "PanelProfile";
     public const string PrefabsPanelProfile_Favourites = "PanelProfile_Favourites";
@@ -26,6 +28,21 @@ using UnityEngine;
     public const string PrefabsPanelProfileMaster = "PanelProfileMaster";
     public const string PrefabsPanelChatting= "PanelChatting";
     public const string PrefabsPanelInstructor = "PanelInstructor";
+    public const string ShowPerson_3D = "ShowPerson_3D";
+    public const string ShowPerson_AR = "MarkerPerson";
+    // asana Animation
+    public const string AnimationAsana_1 = "Warrior_Pose_03";
+    public const string AnimationAsana_2 = "Warrior_Pose_02";
+    public const string AnimationAsana_3 = "Half_Moon_Pose";
+    public const string AnimationAsana_4 = "Side_Angle_Pose";
+    public const string AnimationAsana_5 = "Downward_Facing_Dog_Pose";
+
+    //Person
+    public const string Side_Angle_Pose_Animation = "Side_Angle_Pose";
+    public const string Warrior_Pose_03_Animation = "Warrior_Pose_03";
+    public const string Half_Moon_Pose_Animation = "Half_Moon_Pose";
+    public const string BodyState = "Muscule";
+    public const string MusculeState = "Body";
 
     // Title screen text:
     public const string CouldNotFetchUserData = "Could not connect to user database.\n" +

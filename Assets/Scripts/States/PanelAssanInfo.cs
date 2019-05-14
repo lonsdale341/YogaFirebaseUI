@@ -8,18 +8,20 @@ namespace States
     {
 
         string assanaName;
+        int assanaNumber;
         Menus.PanelAssanInfoGUI dialogComponent;
-        public PanelAssanInfo(string nameAssana)
+        public PanelAssanInfo(int number)
         {
 
-            assanaName = nameAssana;
+           
+            assanaNumber = number;
 
         }
         public override void Initialize()
         {
            
             dialogComponent = SpawnUI<Menus.PanelAssanInfoGUI>(StringConstants.PrefabsPanelAssanInfo);
-            dialogComponent.Asana_Name.text = assanaName;
+            dialogComponent.Asana_Name.text = "Asana "+ assanaNumber.ToString();
         }
 
         public override void Suspend()
@@ -46,8 +48,12 @@ namespace States
 
                 manager.PopState();
             }
+            if (source == dialogComponent.ShowMode.gameObject)
+            {
 
-           if (source == dialogComponent.Profile.gameObject)
+                manager.PushState(new PanelTraining_AsanaShow3D());
+            }
+            if (source == dialogComponent.Profile.gameObject)
             {
 
                 manager.ClearStack(new PanelProfile());
