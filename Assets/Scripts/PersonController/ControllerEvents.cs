@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class ControllerEvents : MonoBehaviour
 {
-   
+    public bool isTest;
     public LabellEntry[] Labels;
-   public  Animator []animators;
-    
+    public Animator[] animators;
+
     public Text textState;
     public GameObject Body;
     public GameObject Muscule;
@@ -23,7 +23,8 @@ public class ControllerEvents : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {;
+    {
+        ;
         //animators = FindObjectsOfType<Animator>();
         animators = gameObject.GetComponentsInChildren<Animator>();
         foreach (LabellEntry label in Labels)
@@ -31,13 +32,17 @@ public class ControllerEvents : MonoBehaviour
             label.Labels.SetActive(false);
         }
         textState.text = StringConstants.BodyState;
-        foreach (MaterialEntry entry in CommonData.prefabs.objectMaterials)
+        if (!isTest)
         {
-            foreach (Material materialEntry in entry.Materials)
+            foreach (MaterialEntry entry in CommonData.prefabs.objectMaterials)
             {
-                materialEntry.SetColor("_Color", new Vector4(1, 1f, 1f, 1f));
+                foreach (Material materialEntry in entry.Materials)
+                {
+                    materialEntry.SetColor("_Color", new Vector4(1, 1f, 1f, 1f));
+                }
             }
         }
+
         IsFade = true;
         MusculeReners = Muscule.GetComponentsInChildren<Renderer>();
         //   foreach (Renderer musculeRender in MusculeReners)
@@ -161,7 +166,7 @@ public class ControllerEvents : MonoBehaviour
                 entry.Labels.SetActive(true);
             }
         }
-        
+
     }
     private void Body_SetMaterialTransparent()
     {
