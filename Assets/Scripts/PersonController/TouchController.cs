@@ -6,6 +6,7 @@ using UnityEngine;
 public class TouchController : MonoBehaviour
 {
     public bool isPose;
+    public bool noVert;
     public GameObject Girl;
     public float Speed = 0.1f;
     Vector3 CentreAround;
@@ -93,9 +94,16 @@ public class TouchController : MonoBehaviour
             if (Girl != null)
             {
                // Girl.transform.RotateAround(MHuman_Pivot.transform.position, Girl.transform.up, -yAngle);
+
                 Girl.transform.RotateAround(Girl.transform.position, Girl.transform.up, -yAngle);
-                Girl.transform.RotateAround(Girl.transform.position, Girl.transform.forward, xAngle);
+                if(!noVert)
+                {
+                    Girl.transform.RotateAround(Girl.transform.position, Girl.transform.forward, xAngle);
+                }
+               // 
+
                // Girl.transform.Rotate(zAngle, yAngle, xAngle, Space.World);
+
             }
         }
 #endif
